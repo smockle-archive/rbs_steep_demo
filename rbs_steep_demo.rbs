@@ -1,8 +1,8 @@
 # Demo (lack of) type narrowing
 class RBSSteepDemo
+  @maybe_number: Integer?
+
+  def initialize: (Integer? maybe_number) -> void
+
   def add_one: () -> Integer?
-
-  private
-
-  def maybe_number: () -> Integer?
 end

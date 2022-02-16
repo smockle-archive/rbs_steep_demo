@@ -13,16 +13,16 @@ Demo (lack of) type narrowing.
 4. Note the following error is reported:
 
    ```
-   rbs_steep_demo.rb:8:17: [error] Type `(::Integer | nil)` does not have method `+`
+   rbs_steep_demo.rb:12:18: [error] Type `(::Integer | nil)` does not have method `+`
    │ Diagnostic ID: Ruby::NoMethod
    │
-   └     maybe_number + 1
-                      ~
+   └     @maybe_number + 1
+                       ~
 
    Detected 1 problem from 1 file
    ```
 
-5. Consider that the early return on `rbs_steep_demo.rb#L6` (`return if maybe_number.nil?`) should narrow the type of `maybe_number` to `Integer`, and that `Integer` has a method `+`.
+5. Consider that the early return on `rbs_steep_demo.rb#L10` (`return if @maybe_number.nil?`) should narrow the type of `@maybe_number` to `Integer`, and that `Integer` has a method `+`.
 
 ## References
 

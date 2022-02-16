@@ -2,15 +2,13 @@
 
 # Demo (lack of) type narrowing
 class RBSSteepDemo
-  def add_one
-    return if maybe_number.nil?
-
-    maybe_number + 1
+  def initialize(maybe_number)
+    @maybe_number = maybe_number
   end
 
-  private
+  def add_one
+    return if @maybe_number.nil?
 
-  def maybe_number
-    3
+    @maybe_number + 1
   end
 end
